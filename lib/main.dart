@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:text_wizards/widgets/assetimagewidget.dart';
-import 'package:text_wizards/widgets/flatbuttonwidget.dart';
+import 'package:text_wizards/widgets/assetImageWidget.dart';
+import 'package:text_wizards/widgets/bottomNavigationWidget.dart';
+import 'package:text_wizards/widgets/dynamicListViewWidget.dart';
+import 'package:text_wizards/widgets/listTileWidget.dart';
+import 'package:text_wizards/widgets/separatedListViewWidget.dart';
+import 'package:text_wizards/widgets/stackWidget.dart';
+import 'package:text_wizards/widgets/staticListViewWidget.dart';
+import 'package:text_wizards/widgets/flatButtonWidget.dart';
 import 'package:text_wizards/widgets/iconimagewidget.dart';
 import 'package:text_wizards/widgets/networkimagewidget.dart';
 import 'package:text_wizards/widgets/raisedbuttonwidget.dart';
 import 'package:text_wizards/widgets/raisedbuttonwithtext.dart';
 import 'package:text_wizards/widgets/richtextwidget.dart';
+import 'package:text_wizards/widgets/rowWidget.dart';
+import 'package:text_wizards/widgets/tabBarWidget.dart';
 import 'package:text_wizards/widgets/textwidget.dart';
-import 'widgets/containerwidget.dart';
+import 'widgets/containerWidget.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -46,32 +55,42 @@ class MyHomePage extends StatelessWidget {
   return SafeArea(
     top:true,
     child:Scaffold(
-      body:SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children:<Widget>[
-            TextWidget(),
-            SizedBox(height: 20),
-            RichTextWidget(),
-            SizedBox(height: 20),
-            ContainerWidget(),
-            SizedBox(height: 20),
-            AssetImageWidget(),
-            SizedBox(height: 20),
-            NetworkImageWidget(),
-            SizedBox(height: 20),
-            FlatButtonWidget(),
-            SizedBox(height: 20),
-            IconImageWidget(),
-            SizedBox(height: 20),
-            RaisedButtonWidget(),
-            SizedBox(height: 20),
-            RaisedButtonWithText(),
-            SizedBox(height: 20)
-
-
-        ]),
-      )
+      appBar: AppBar(
+        title: Text('My first app!'),
+        leading: Icon(
+          Icons.apps
+        ),
+      ),
+      body: TabBarWidget(),
+//      body:SingleChildScrollView(
+//        child: Column(
+//          crossAxisAlignment: CrossAxisAlignment.start,
+//          children:<Widget>[
+//            TextWidget(),
+//            SizedBox(height: 20),
+//            RichTextWidget(),
+//            SizedBox(height: 20),
+//            ContainerWidget(),
+//            SizedBox(height: 20),
+//            AssetImageWidget(),
+//            SizedBox(height: 20),
+//            NetworkImageWidget(),
+//            SizedBox(height: 20),
+//            FlatButtonWidget(),
+//            SizedBox(height: 20),
+//            IconImageWidget(),
+//            SizedBox(height: 20),
+//            RaisedButtonWidget(),
+//            SizedBox(height: 20),
+//            RaisedButtonWithText(),
+//            SizedBox(height: 20),
+//            RowWidget(),
+//            SizedBox(height: 20)
+//
+//
+//
+//        ]),
+//      )
     )
   );
   }
