@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class RichTextWidget extends StatelessWidget {
+class NetworkImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
           title: Text(
-            'RICH TEXT WIDGET',
+            'NETWORK IMAGE WIDGET',
             style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
@@ -25,7 +26,7 @@ class RichTextWidget extends StatelessWidget {
             child: ListTile(
                 title: Center(
                     child: Text(
-                  'This is rich text widget demo.',
+                  'This is network image widget demo.',
                   style: TextStyle(color: Colors.white),
                 )),
                 subtitle: Center(
@@ -36,25 +37,13 @@ class RichTextWidget extends StatelessWidget {
           ),
           SizedBox(height: 60),
           Center(
-            child: Container(
-                child: Text.rich(
-                  TextSpan(
-                    text: 'Lets ',
-                    style: TextStyle(fontSize: 24),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: 'Get ',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black)),
-                      TextSpan(text: 'MOTIVATED!')
-                    ],
-                  ),
-                ),
-                color: Colors.white),
+            child: Image.network(
+              'https://images.unsplash.com/photo-1547721064-da6cfb341d50',
+              height: screenHeight / 2,
+            ),
           ),
           Align(
-            heightFactor: 7.5,
+            heightFactor: 2.1,
             alignment: Alignment.bottomRight,
             child: IconButton(
               //alignment: Alignment.bottomRight,

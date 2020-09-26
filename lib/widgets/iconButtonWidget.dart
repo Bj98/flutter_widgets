@@ -1,17 +1,14 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:text_wizards/widgets/raisedButtonWithIcon.dart';
 
-class RaisedButtonWidget extends StatelessWidget {
+class IconButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
           title: Text(
-            'RAISED BUTTON',
+            'ICON BUTTON WIDGET',
             style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
@@ -28,7 +25,7 @@ class RaisedButtonWidget extends StatelessWidget {
             child: ListTile(
                 title: Center(
                     child: Text(
-                  'This is raised button demo.',
+                  'This is icon button demo.',
                   style: TextStyle(color: Colors.white),
                 )),
                 subtitle: Center(
@@ -39,23 +36,10 @@ class RaisedButtonWidget extends StatelessWidget {
           ),
           SizedBox(height: 60),
           Center(
-            child: RaisedButton(
-              splashColor: Colors.red,
-              color:Colors.black,
-              padding: EdgeInsets.all(20),
-              onPressed: () => {
-                log('Raised button is clicked'),
-                //Navigator.push(context, MaterialPageRoute(builder: (context)=>RaisedButtonWithText()))
-                Navigator.pop(context)
-              },
-              child: Text(
-                'Raised Button',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-              elevation: 10,
+            child: IconButton(
+              iconSize: 100,
+              icon: Icon(Icons.battery_alert),
+              onPressed: () {Navigator.pop(context);},
             ),
           ),
         ]));
