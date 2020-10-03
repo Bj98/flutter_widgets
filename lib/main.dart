@@ -3,6 +3,7 @@ import 'package:text_wizards/widgets/assetImageWidget.dart';
 import 'package:text_wizards/widgets/bottomNavigationWidget.dart';
 import 'package:text_wizards/widgets/dynamicListViewWidget.dart';
 import 'package:text_wizards/widgets/listTileWidget.dart';
+import 'package:text_wizards/widgets/myForm.dart';
 import 'package:text_wizards/widgets/separatedListViewWidget.dart';
 import 'package:text_wizards/widgets/stackWidget.dart';
 import 'package:text_wizards/widgets/staticListViewWidget.dart';
@@ -15,6 +16,8 @@ import 'package:text_wizards/widgets/richtextwidget.dart';
 import 'package:text_wizards/widgets/rowWidget.dart';
 import 'package:text_wizards/widgets/tabBarWidget.dart';
 import 'package:text_wizards/widgets/textwidget.dart';
+import 'package:text_wizards/widgets/timeDisplay.dart';
+import 'customWidgets/myCustomButton.dart';
 import 'widgets/containerWidget.dart';
 
 void main() {
@@ -40,6 +43,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         //primarySwatch: Colors.red,
         primaryColor: Colors.black,
+        errorColor: Colors.black,
         //accentColor: Colors.white,
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
@@ -47,6 +51,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
+
     );
   }
 }
@@ -71,7 +76,7 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-//      body: TabBarWidget(),
+            //body: MyForm(),
             body: SingleChildScrollView(
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,176 +96,79 @@ class MyHomePage extends StatelessWidget {
                       color: Colors.black,
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>TextWidget()));
-                          },
-                          child: Text("TEXT WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: TextWidget(),
+                      text: "TEXT WIDGET",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RichTextWidget()));
-                          },
-                          child: Text("RICH TEXT WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: RichTextWidget(),
+                      text: "RICH TEXT WIDGET",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ContainerWidget()));
-                          },
-                          child: Text("CONTAINER WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: ContainerWidget(),
+                      text: "CONTAINER WIDGET",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>FlatButtonWidget()));
-                          },
-                          child: Text("FLAT BUTTON",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: FlatButtonWidget(),
+                      text: "FLAT BUTTON",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RaisedButtonWidget()));
-                          },
-                          child: Text("RAISED BUTTON",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: RaisedButtonWidget(),
+                      text: "RAISED BUTTON",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RaisedButtonWithIcon()));
-                          },
-                          child: Text("RAISED BUTTON WITH ICON",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: RaisedButtonWithIcon(),
+                      text: "RAISED BUTTON WITH ICON",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>IconButtonWidget()));
-                          },
-                          child: Text("ICON BUTTON WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: IconButtonWidget(),
+                      text: "ICON BUTTON WIDGET",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>AssetImageWidget()));
-                          },
-                          child: Text("ASSET IMAGE WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: AssetImageWidget(),
+                      text: "ASSET IMAGE WIDGET",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>NetworkImageWidget()));
-                          },
-                          child: Text("NETWORK IMAGE WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: NetworkImageWidget(),
+                      text: "NETWORK IMAGE WIDGET",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>StackWidget()));
-                          },
-                          child: Text("STACK IMAGE WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: StackWidget(),
+                      text: "STACK IMAGE WIDGET",
                     ),
                     SizedBox(height: 20),
-                    Center(
-                      child: FlatButton(
-                          color: Colors.black,
-                          splashColor: Colors.red,
-                          padding: EdgeInsets.all(20),
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RowWidget()));
-                          },
-                          child: Text("ROW WIDGET",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    MyCustomButton(
+                      navigationWidget: RowWidget(),
+                      text: "ROW WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: MyForm(),
+                      text: "FORM WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: TimeDisplay(),
+                      text: "DIGITAL CLOCK & DATE",
                     ),
                     SizedBox(height: 20),
 
 
 
 
-                  ]),
-            )));
+                  ]
+                  ),
+            )
+    )
+    );
   }
 }
