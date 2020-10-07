@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //returning widget styles
     return SafeArea(
         top: true,
         child: Scaffold(
