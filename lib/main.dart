@@ -17,7 +17,6 @@ import 'package:text_wizards/widgets/rowWidget.dart';
 import 'package:text_wizards/widgets/tabBarWidget.dart';
 import 'package:text_wizards/widgets/textwidget.dart';
 import 'package:text_wizards/widgets/timeDisplay.dart';
-import 'customWidgets/myCustomAppBar.dart';
 import 'customWidgets/myCustomButton.dart';
 import 'widgets/containerWidget.dart';
 
@@ -60,10 +59,23 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    //returning widget styles
+    return SafeArea(
+        top: true,
+        child: Scaffold(
             backgroundColor: Colors.red,
-            appBar:MyCustomAppBar(
-                text: "FLUTTER WIDGETS"
+            appBar: AppBar(
+              title: Text(
+                'FLUTTER WIDGETS',
+                style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              leading: Icon(
+                Icons.apps,
+                color: Colors.white,
+              ),
             ),
             //body: MyForm(),
             body: SingleChildScrollView(
@@ -141,23 +153,13 @@ class MyHomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     MyCustomButton(
-                      navigationWidget: BottomNavigationWidget(),
-                      text: "BOTTOM NAVIGATION WIDGET",
-                    ),
-                    SizedBox(height: 20),
-                    MyCustomButton(
                       navigationWidget: MyForm(),
                       text: "FORM WIDGET",
                     ),
                     SizedBox(height: 20),
                     MyCustomButton(
                       navigationWidget: TimeDisplay(),
-                      text: "DATE AND CLOCK",
-                    ),
-                    SizedBox(height: 20),
-                    MyCustomButton(
-                      navigationWidget: ListTileWidget(),
-                      text: "LIST TILE WIDGET",
+                      text: "DIGITAL CLOCK & DATE",
                     ),
                     SizedBox(height: 20),
 
@@ -167,6 +169,7 @@ class MyHomePage extends StatelessWidget {
                   ]
                   ),
             )
+    )
     );
   }
 }
