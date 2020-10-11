@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
 
 class AssetImageWidget extends StatelessWidget {
   @override
@@ -36,21 +37,9 @@ class AssetImageWidget extends StatelessWidget {
         ),
         SizedBox(height: 20),
         Image.asset('images/first.jpg'),
-        Align(
-          heightFactor: 4,
-          alignment: Alignment.bottomRight,
-          child: IconButton(
-            //alignment: Alignment.bottomRight,
-              color: Colors.black,
-              iconSize: 40,
-              icon: Icon(
-                Icons.keyboard_backspace,
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-        ),
+
       ]),
+      floatingActionButton: CustomBackButton(),
     );
   }
 }

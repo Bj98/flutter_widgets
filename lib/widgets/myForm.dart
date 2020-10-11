@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
 import 'package:text_wizards/customWidgets/myTextFormField.dart';
 import 'package:text_wizards/model/model.dart';
 import 'package:text_wizards/widgets/result.dart';
@@ -142,6 +143,7 @@ class _MyFormState extends State<MyForm> {
           ),
         ),
       ),
+        floatingActionButton: CustomBackButton()
     );
   }
 }

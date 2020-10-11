@@ -1,24 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 
 class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text(
-            'TEXT WIDGET',
-            style: TextStyle(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
-          ),
-          leading: Icon(
-            Icons.apps,
-            color: Colors.white,
-          ),
-        ),
+        appBar: MyCustomAppBar(
+            text: "Text Widget"),
         body: Column(children: <Widget>[
           Card(
             color: Colors.black,
@@ -57,20 +48,9 @@ class TextWidget extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.green)),
           ),
-          Align(
-            heightFactor: 6.6,
-            alignment: Alignment.bottomRight,
-            child: IconButton(
-                //alignment: Alignment.bottomRight,
-                color: Colors.black,
-                iconSize: 40,
-                icon: Icon(
-                  Icons.keyboard_backspace,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                }),
-          ),
-        ]));
+        ]
+        ),
+        floatingActionButton: CustomBackButton()
+    );
   }
 }

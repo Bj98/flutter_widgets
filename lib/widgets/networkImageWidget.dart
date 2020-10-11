@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
 
 class NetworkImageWidget extends StatelessWidget {
   @override
@@ -41,21 +42,9 @@ class NetworkImageWidget extends StatelessWidget {
               'https://images.unsplash.com/photo-1547721064-da6cfb341d50',
               height: screenHeight / 2,
             ),
-          ),
-          Align(
-            heightFactor: 2.1,
-            alignment: Alignment.bottomRight,
-            child: IconButton(
-              //alignment: Alignment.bottomRight,
-                color: Colors.black,
-                iconSize: 40,
-                icon: Icon(
-                  Icons.keyboard_backspace,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                }),
-          ),
-        ]));
+          )
+        ]),
+        floatingActionButton: CustomBackButton()
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
 import 'package:timer_builder/timer_builder.dart';
 
 class TimeDisplay extends StatefulWidget {
@@ -45,7 +46,7 @@ class _TimeDisplayState extends State<TimeDisplay> {
           child: Center(
             child:
                 TimerBuilder.periodic(Duration(seconds: 1), builder: (context) {
-              print("${getSystemTime()}");
+              //print("${getSystemTime()}");
               return Text(
                 "${getSystemTime()}",
                 style: TextStyle(
@@ -63,7 +64,7 @@ class _TimeDisplayState extends State<TimeDisplay> {
           child: Center(
             child:
                 TimerBuilder.periodic(Duration(hours: 24), builder: (context) {
-              print("${getSystemTime()}");
+              //print("${getSystemTime()}");
               return Text(
                 "${getSystemDate()}",
                 style: TextStyle(
@@ -75,6 +76,7 @@ class _TimeDisplayState extends State<TimeDisplay> {
           ),
         ),
       ]),
+        floatingActionButton: CustomBackButton()
     );
   }
 }
