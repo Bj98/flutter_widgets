@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 
 class NetworkImageWidget extends StatelessWidget {
   @override
@@ -8,18 +9,8 @@ class NetworkImageWidget extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text(
-            'NETWORK IMAGE WIDGET',
-            style: TextStyle(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
-          ),
-          leading: Icon(
-            Icons.apps,
-            color: Colors.white,
-          ),
+        appBar: MyCustomAppBar(
+            text: "NETWORK IMAGE WIDGET"
         ),
         body: Column(children: <Widget>[
           Card(

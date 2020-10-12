@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   @override
@@ -38,8 +40,8 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+      appBar: MyCustomAppBar(
+          text: "BOTTOM NAVIGATION BAR WIDGET"
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -70,6 +72,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
+        floatingActionButton: CustomBackButton()
     );
   }
 

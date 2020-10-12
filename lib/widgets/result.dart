@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 import 'package:text_wizards/model/model.dart';
 
 // ignore: must_be_immutable
@@ -11,18 +13,8 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
-      appBar: AppBar(
-        title: Text(
-          'FORM WIDGET RESULT',
-          style: TextStyle(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
-        ),
-        leading: Icon(
-          Icons.apps,
-          color: Colors.white,
-        ),
+      appBar: MyCustomAppBar(
+          text: "CONTAINER WIDGET"
       ),
       body: Container(
         margin: EdgeInsets.all(10.0),
@@ -33,23 +25,10 @@ class Result extends StatelessWidget {
             Text(model.lastName, style: TextStyle(fontSize: 22)),
             Text(model.email, style: TextStyle(fontSize: 22)),
             Text(model.password, style: TextStyle(fontSize: 22)),
-            Align(
-              heightFactor: 8.3,
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                //alignment: Alignment.bottomRight,
-                  color: Colors.black,
-                  iconSize: 40,
-                  icon: Icon(
-                    Icons.keyboard_backspace,
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).popUntil((route) => route.isFirst);
-                  }),
-            ),
           ],
         ),
       ),
+        floatingActionButton: CustomBackButton()
     );
   }
 }

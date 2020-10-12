@@ -1,24 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 
 class AssetImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
-      appBar: AppBar(
-        title: Text(
-          'ASSET IMAGE',
-          style: TextStyle(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
-        ),
-        leading: Icon(
-          Icons.apps,
-          color: Colors.white,
-        ),
+      appBar: MyCustomAppBar(
+          text: "ASSET IMAGE WIDGET"
       ),
       body: Column(children: <Widget>[
         Card(

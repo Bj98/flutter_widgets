@@ -1,23 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 
 class RaisedButtonWithIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text(
-            'RAISED BUTTON WITH ICON',
-            style: TextStyle(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
-          ),
-          leading: Icon(
-            Icons.apps,
-            color: Colors.white,
-          ),
+        appBar: MyCustomAppBar(
+            text: "RAISED BUTTON WITH ICON"
         ),
         body: Column(
           children: <Widget>[

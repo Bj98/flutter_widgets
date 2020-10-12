@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 import 'package:timer_builder/timer_builder.dart';
 
 class TimeDisplay extends StatefulWidget {
@@ -24,18 +25,8 @@ class _TimeDisplayState extends State<TimeDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.red,
-      appBar: AppBar(
-        title: Text(
-          'DIGITAL CLOCK AND DATE',
-          style: TextStyle(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
-        ),
-        leading: Icon(
-          Icons.apps,
-          color: Colors.white,
-        ),
+      appBar:MyCustomAppBar(
+          text: "FORM WIDGET"
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

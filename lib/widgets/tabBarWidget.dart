@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
 
 class TabBarWidget extends StatelessWidget {
   @override
@@ -8,7 +9,8 @@ class TabBarWidget extends StatelessWidget {
       length: 10,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Tab Bar'),
+          title: Text('TAB BAR WIDGET',
+          style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,fontStyle: FontStyle.italic,)),
           bottom: TabBar(
             isScrollable: true,
             //controller: TabController(initialIndex: 2),
@@ -61,6 +63,7 @@ class TabBarWidget extends StatelessWidget {
             Icon(Icons.ac_unit),
           ],
         ),
+          floatingActionButton: CustomBackButton()
       ),
 
     );

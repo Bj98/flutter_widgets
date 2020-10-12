@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 import 'package:text_wizards/widgets/raisedButtonWithIcon.dart';
 
 class RaisedButtonWidget extends StatelessWidget {
@@ -9,18 +10,8 @@ class RaisedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text(
-            'RAISED BUTTON',
-            style: TextStyle(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
-          ),
-          leading: Icon(
-            Icons.apps,
-            color: Colors.white,
-          ),
+        appBar: MyCustomAppBar(
+            text: "RAISED BUTTON"
         ),
         body: Column(children: <Widget>[
           Card(

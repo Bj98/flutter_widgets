@@ -1,24 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 
 class RichTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Text(
-            'RICH TEXT WIDGET',
-            style: TextStyle(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
-          ),
-          leading: Icon(
-            Icons.apps,
-            color: Colors.white,
-          ),
+        appBar: MyCustomAppBar(
+            text: "RICH TEXT WIDGET"
         ),
         body: Column(children: <Widget>[
           Card(

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 import 'package:text_wizards/customWidgets/myTextFormField.dart';
 import 'package:text_wizards/model/model.dart';
 import 'package:text_wizards/widgets/result.dart';
@@ -21,18 +22,8 @@ class _MyFormState extends State<MyForm> {
 
     return Scaffold(
       backgroundColor: Colors.red,
-      appBar: AppBar(
-        title: Text(
-          'FORM WIDGET',
-          style: TextStyle(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
-        ),
-        leading: Icon(
-          Icons.apps,
-          color: Colors.white,
-        ),
+      appBar:MyCustomAppBar(
+          text: "FORM WIDGET"
       ),
       body: Form(
         key: _formKey,
@@ -122,6 +113,7 @@ class _MyFormState extends State<MyForm> {
                 },
               ),
               RaisedButton(
+
                 color: Colors.black,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
@@ -135,7 +127,7 @@ class _MyFormState extends State<MyForm> {
                 child: Text(
                   'Sign Up',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.white,fontSize: 24,fontWeight: FontWeight.bold
                   ),
                 ),
               )

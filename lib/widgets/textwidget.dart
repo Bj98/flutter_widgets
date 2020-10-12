@@ -9,7 +9,7 @@ class TextWidget extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.red,
         appBar: MyCustomAppBar(
-            text: "Text Widget"),
+            text: "TEXT WIDGET"),
         body: Column(children: <Widget>[
           Card(
             color: Colors.black,

@@ -5,7 +5,7 @@ import 'package:text_wizards/widgets/dynamicListViewWidget.dart';
 import 'package:text_wizards/widgets/listTileWidget.dart';
 import 'package:text_wizards/widgets/myForm.dart';
 import 'package:text_wizards/widgets/separatedListViewWidget.dart';
-import 'package:text_wizards/widgets/stackWidget.dart';
+import 'package:text_wizards/widgets/stackImageWidget.dart';
 import 'package:text_wizards/widgets/staticListViewWidget.dart';
 import 'package:text_wizards/widgets/flatButtonWidget.dart';
 import 'package:text_wizards/widgets/iconButtonWidget.dart';
@@ -17,6 +17,7 @@ import 'package:text_wizards/widgets/rowWidget.dart';
 import 'package:text_wizards/widgets/tabBarWidget.dart';
 import 'package:text_wizards/widgets/textwidget.dart';
 import 'package:text_wizards/widgets/timeDisplay.dart';
+import 'customWidgets/myCustomAppBar.dart';
 import 'customWidgets/myCustomButton.dart';
 import 'widgets/containerWidget.dart';
 
@@ -64,18 +65,8 @@ class MyHomePage extends StatelessWidget {
         top: true,
         child: Scaffold(
             backgroundColor: Colors.red,
-            appBar: AppBar(
-              title: Text(
-                'FLUTTER WIDGETS',
-                style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-              ),
-              leading: Icon(
-                Icons.apps,
-                color: Colors.white,
-              ),
+            appBar:MyCustomAppBar(
+                text: "FLUTTER WIDGETS"
             ),
             //body: MyForm(),
             body: SingleChildScrollView(
@@ -143,13 +134,43 @@ class MyHomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     MyCustomButton(
-                      navigationWidget: StackWidget(),
+                      navigationWidget: StackImageWidget(),
                       text: "STACK IMAGE WIDGET",
                     ),
                     SizedBox(height: 20),
                     MyCustomButton(
                       navigationWidget: RowWidget(),
                       text: "ROW WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: TabBarWidget(),
+                      text: "TAB BAR WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: BottomNavigationWidget(),
+                      text: "BOTTOM NAVIGATION WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: StaticListViewWidget(),
+                      text: "STATIC LIST VIEW WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: DynamicListViewWidget(),
+                      text: "DYNAMIC LIST VIEW WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: SeparatedListViewWidget(),
+                      text: "SEPARATED LIST VIEW WIDGET",
+                    ),
+                    SizedBox(height: 20),
+                    MyCustomButton(
+                      navigationWidget: ListTileWidget(),
+                      text: "LIST TILE WIDGET",
                     ),
                     SizedBox(height: 20),
                     MyCustomButton(

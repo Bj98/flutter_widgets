@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:text_wizards/customWidgets/customBackButton.dart';
+import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 
 class SeparatedListViewWidget extends StatelessWidget {
   @override
@@ -31,19 +33,25 @@ class SeparatedListViewWidget extends StatelessWidget {
       200,
       100
     ];
-    return ListView.separated(
-      padding: const EdgeInsets.all(10),
-      itemCount: entries.length,
-      itemBuilder: (BuildContext context,int index){
-        return Container(
-          height: 50,
-          color: Colors.red[colors[index]],
-          child: Center(child: Text('${entries[index]}'),),
-        );
-      },
-      separatorBuilder: (BuildContext context,int index)=>const Divider(
-        color: Colors.black,
+    return Scaffold(
+      appBar:MyCustomAppBar(
+          text: "SEPARATED LIST VIEW WIDGET"
       ),
+      body: ListView.separated(
+        padding: const EdgeInsets.all(10),
+        itemCount: entries.length,
+        itemBuilder: (BuildContext context,int index){
+          return Container(
+            height: 50,
+            color: Colors.red[colors[index]],
+            child: Center(child: Text('${entries[index]}'),),
+          );
+        },
+        separatorBuilder: (BuildContext context,int index)=>const Divider(
+          color: Colors.black,
+        ),
+      ),
+        floatingActionButton: CustomBackButton()
     );
 
   }
