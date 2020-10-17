@@ -19,6 +19,7 @@ import 'package:text_wizards/widgets/textwidget.dart';
 import 'package:text_wizards/widgets/timeDisplay.dart';
 import 'customWidgets/myCustomAppBar.dart';
 import 'customWidgets/myCustomButton.dart';
+import 'news/screen/news-screen.dart.dart';
 import 'widgets/containerWidget.dart';
 
 void main() {
@@ -181,6 +182,10 @@ class MyHomePage extends StatelessWidget {
                     MyCustomButton(
                       navigationWidget: TimeDisplay(),
                       text: "DIGITAL CLOCK & DATE",
+                    ),
+                    SizedBox(height: 20),MyCustomButton(
+                      navigationWidget: NewsScreen(),
+                      text: "NEWS API",
                     ),
                     SizedBox(height: 20),
 
