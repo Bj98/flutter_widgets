@@ -11,6 +11,14 @@ class NewsWidget extends StatelessWidget {
       return '';
     }
   }
+  getImage(String imageUrl){
+    if(imageUrl!=null){
+      return Image.network(imageUrl);
+    }
+    else{
+      return SizedBox.shrink();
+    }
+  }
   News news;
   NewsWidget({this.news});
   @override
@@ -31,7 +39,7 @@ class NewsWidget extends StatelessWidget {
                 Expanded(flex:3,child: Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                     child: Text(news.description))),
-                Expanded(flex:1,child: Image.network(news.urlToImage))
+                Expanded(flex:1,child: getImage(news.urlToImage))
               ],
             ),
           )

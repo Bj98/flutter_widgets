@@ -5,6 +5,7 @@ import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:text_wizards/customWidgets/myCustomAppBar.dart';
 import 'package:text_wizards/news/model/news.dart';
+import 'package:text_wizards/news/screen/newsDetailScreen.dart';
 
 import '../newsWidget.dart';
 
@@ -31,7 +32,7 @@ class _NewsScreenState extends State<NewsScreen> {
 
   getNewsData() async{
     try {
-      var url ='http://newsapi.org/v2/everything?q=bitcoin&from=2020-09-17&sortBy=publishedAt&apiKey=4ddad47619494b54b357e5de516d1667';
+      var url ='http://newsapi.org/v2/everything?q=bitcoin&from=2020-09-18&sortBy=publishedAt&apiKey=4ddad47619494b54b357e5de516d1667';
 
       // Await the http get response, then decode the json-formatted response.
       var response = await http.get(url);
@@ -77,7 +78,15 @@ class _NewsScreenState extends State<NewsScreen> {
           itemBuilder: (BuildContext context,int index){
             return Padding(
               padding: const EdgeInsets.only(bottom:14.0,top: 10 ),
-                child: NewsWidget(news: newsData[index],));
+                child: InkWell(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(
+                      builder: (BuildContext context){
+                        return NewsDetailScreen(news: newsData[index],);
+                      },
+                    ));
+                  },
+                    child: NewsWidget(news: newsData[index],)));
           },
           separatorBuilder: (BuildContext context,int index)=>const Divider(
             color: Colors.black,
